@@ -1,5 +1,6 @@
 { pkgs }: {
 	deps = [
+   pkgs.docker
    pkgs.mysql80
    pkgs.mysql-shell
 		pkgs.nodejs-18_x
