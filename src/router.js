@@ -32,170 +32,170 @@ const routes = [
   {
     path: '/userAccount',
     name: 'userAccount',
-    component: () => import('./components/userAccount/Index.vue')
+    component: () => import('./components/userAccount/index.vue')
   },
   {
     path: '/userAccount/create',
-    component: () => import('./components/userAccount/Create.vue')
+    component: () => import('./components/userAccount/create.vue')
   },
   {
     path: '/userAccount/:id/',
-    component: () => import('./components/userAccount/Detail.vue')
+    component: () => import('./components/userAccount/detail.vue')
   },
   {
     path: '/userAccount/edit/:id/',
-    component: () => import('./components/userAccount/Edit.vue')
+    component: () => import('./components/userAccount/edit.vue')
   },
   {
     path: '/userAccount/delete/:id/',
-    component: () => import('./components/userAccount/Delete.vue')
+    component: () => import('./components/userAccount/delete.vue')
   },
   {
     path: '/student',
     name: 'student',
-    component: () => import('./components/student/Index.vue')
+    component: () => import('./components/student/index.vue')
   },
   {
     path: '/student/create',
-    component: () => import('./components/student/Create.vue')
+    component: () => import('./components/student/create.vue')
   },
   {
     path: '/student/:id/',
-    component: () => import('./components/student/Detail.vue')
+    component: () => import('./components/student/detail.vue')
   },
   {
     path: '/student/edit/:id/',
-    component: () => import('./components/student/Edit.vue')
+    component: () => import('./components/student/edit.vue')
   },
   {
     path: '/student/delete/:id/',
-    component: () => import('./components/student/Delete.vue')
+    component: () => import('./components/student/delete.vue')
   },
   {
     path: '/course',
     name: 'course',
-    component: () => import('./components/course/Index.vue')
+    component: () => import('./components/course/index.vue')
   },
   {
     path: '/course/create',
-    component: () => import('./components/course/Create.vue')
+    component: () => import('./components/course/create.vue')
   },
   {
     path: '/course/:id/',
-    component: () => import('./components/course/Detail.vue')
+    component: () => import('./components/course/detail.vue')
   },
   {
     path: '/course/edit/:id/',
-    component: () => import('./components/course/Edit.vue')
+    component: () => import('./components/course/edit.vue')
   },
   {
     path: '/course/delete/:id/',
-    component: () => import('./components/course/Delete.vue')
+    component: () => import('./components/course/delete.vue')
   },
   {
     path: '/applications',
     name: 'applications',
-    component: () => import('./components/applications/Index.vue')
+    component: () => import('./components/applications/index.vue')
   },
   {
     path: '/applications/create',
-    component: () => import('./components/applications/Create.vue')
+    component: () => import('./components/applications/create.vue')
   },
   {
     path: '/applications/:id/',
-    component: () => import('./components/applications/Detail.vue')
+    component: () => import('./components/applications/detail.vue')
   },
   {
     path: '/applications/edit/:id/',
-    component: () => import('./components/applications/Edit.vue')
+    component: () => import('./components/applications/edit.vue')
   },
   {
     path: '/applications/delete/:id/',
-    component: () => import('./components/applications/Delete.vue')
+    component: () => import('./components/applications/delete.vue')
   },
   {
     path: '/userRole',
     name: 'userRole',
-    component: () => import('./components/userRole/Index.vue')
+    component: () => import('./components/userRole/index.vue')
   },
   {
     path: '/userRole/create',
-    component: () => import('./components/userRole/Create.vue')
+    component: () => import('./components/userRole/create.vue')
   },
   {
     path: '/userRole/:userId/:roleId/',
-    component: () => import('./components/userRole/Detail.vue')
+    component: () => import('./components/userRole/detail.vue')
   },
   {
     path: '/userRole/edit/:userId/:roleId/',
-    component: () => import('./components/userRole/Edit.vue')
+    component: () => import('./components/userRole/edit.vue')
   },
   {
     path: '/userRole/delete/:userId/:roleId/',
-    component: () => import('./components/userRole/Delete.vue')
+    component: () => import('./components/userRole/delete.vue')
   },
   {
     path: '/admissionDecision',
     name: 'admissionDecision',
-    component: () => import('./components/admissionDecision/Index.vue')
+    component: () => import('./components/admissionDecision/index.vue')
   },
   {
     path: '/admissionDecision/create',
-    component: () => import('./components/admissionDecision/Create.vue')
+    component: () => import('./components/admissionDecision/create.vue')
   },
   {
     path: '/admissionDecision/:id/',
-    component: () => import('./components/admissionDecision/Detail.vue')
+    component: () => import('./components/admissionDecision/detail.vue')
   },
   {
     path: '/admissionDecision/edit/:id/',
-    component: () => import('./components/admissionDecision/Edit.vue')
+    component: () => import('./components/admissionDecision/edit.vue')
   },
   {
     path: '/admissionDecision/delete/:id/',
-    component: () => import('./components/admissionDecision/Delete.vue')
+    component: () => import('./components/admissionDecision/delete.vue')
   },
   {
     path: '/enrollment',
     name: 'enrollment',
-    component: () => import('./components/enrollment/Index.vue')
+    component: () => import('./components/enrollment/index.vue')
   },
   {
     path: '/enrollment/create',
-    component: () => import('./components/enrollment/Create.vue')
+    component: () => import('./components/enrollment/create.vue')
   },
   {
     path: '/enrollment/:id/',
-    component: () => import('./components/enrollment/Detail.vue')
+    component: () => import('./components/enrollment/detail.vue')
   },
   {
     path: '/enrollment/edit/:id/',
-    component: () => import('./components/enrollment/Edit.vue')
+    component: () => import('./components/enrollment/edit.vue')
   },
   {
     path: '/enrollment/delete/:id/',
-    component: () => import('./components/enrollment/Delete.vue')
+    component: () => import('./components/enrollment/delete.vue')
   },
   {
     path: '/program',
     name: 'program',
-    component: () => import('./components/program/Index.vue')
+    component: () => import('./components/program/index.vue')
   },
   {
     path: '/program/create',
-    component: () => import('./components/program/Create.vue')
+    component: () => import('./components/program/create.vue')
   },
   {
     path: '/program/:id/',
-    component: () => import('./components/program/Detail.vue')
+    component: () => import('./components/program/detail.vue')
   },
   {
     path: '/program/edit/:id/',
-    component: () => import('./components/program/Edit.vue')
+    component: () => import('./components/program/edit.vue')
   },
   {
     path: '/program/delete/:id/',
-    component: () => import('./components/program/Delete.vue')
+    component: () => import('./components/program/delete.vue')
   },
   {
     path: '/:path(.*)',
