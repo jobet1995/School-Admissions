@@ -1,47 +1,69 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
+  <div v-if="isReady">
+    <div v-if="user">
+      <div class="wrapper">
+        <input id="sidebar_toggle" type="checkbox" />
+        <nav id="sidebar">
+          <router-link to="/" class="bg-light border-bottom">
+            <h4>Admissions</h4>
+          </router-link>
+          <ul class="list-unstyled">
+            <li>
+              <router-link to="/home" :class="this.$route.path.endsWith('/home') ? 'active bg-primary' : ''">Home</router-link>
+            </li>
+            <li v-for="menu in user.menu" :key="menu.path">
+              <router-link :to="`/${menu.path}`" :class="this.$route.path.substr(1).split('/')[0] == menu.path ? 'active bg-primary' : ''">{{menu.title}}</router-link>
+            </li>
+          </ul>
+        </nav>
+        <div id="body">
+          <nav class="navbar bg-light border-bottom">
+            <div class="container-fluid">
+              <label for="sidebar_toggle" class=" btn btn-primary btn-sm"><i class="fa fa-bars"></i></label>
+              <ul class="navbar-nav ms-auto">
+                <li id="searchbar_toggle_menu" class="d-none">
+                  <a class="nav-link text-secondary" href="#"><label for="searchbar_toggle" class="d-lg-none"><i class="fa fa-search"></i></label></a>
+                </li>
+                <li class="dropdown">
+                  <a class="nav-link text-secondary dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="fa fa-user"></i> <span class="d-none d-lg-inline"> {{user.name}}</span></a>
+                  <div class="dropdown-menu dropdown-menu-end">
+                    <router-link to="/profile" class="dropdown-item"><i class="fa fa-user"></i> Profile</router-link>
+                    <router-link to="/logout" class="dropdown-item"><i class="fa fa-sign-out"></i> Logout</router-link>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="content">
+            <router-view />
+          </div>
+        </div>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+    <div v-else>
+      <router-view />
+    </div>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script>
+import http from './http'
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
+export default {
+  name: 'App',
+  data() {
+    return {
+      isReady: false,
+      user: null
+    }
+  },
+  beforeCreate() {
+    http.get('/user').then(response => {
+      this.$root.user = this.user = response.data
+      this.isReady = true
+    }).catch(() => {
+      this.isReady = true
+    })
   }
 }
-</style>
+</script>
