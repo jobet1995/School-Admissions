@@ -47,4 +47,3 @@ externalPort = 8000
 [[ports]]
 localPort = 5174
 externalPort = 80
-exposeLocalhost = true
